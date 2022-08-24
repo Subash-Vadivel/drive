@@ -125,7 +125,7 @@ function Menu()
 {
 return(<><Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Ridos</Navbar.Brand>
+        <Navbar.Brand href="#home">Rid</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="justify-content-end" style={{ width: "100%" }}>
