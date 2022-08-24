@@ -125,11 +125,11 @@ function Menu()
 {
 return(<><Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Rido</Navbar.Brand>
+        <Navbar.Brand href="#home">Rid</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="justify-content-end" style={{ width: "100%" }}>
-          <Nav.Link href="/home">Login</Nav.Link>
+          <Nav.Link href="/home">Lo</Nav.Link>
           <Nav.Link eventKey="link-1">Signup</Nav.Link>
         </Nav>
         </Navbar.Collapse>
@@ -140,11 +140,10 @@ return(<><Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 
 function Home() {
   return (<>
-    {Menu()}
-    {car()}
-    {Lis()}
-    {other()}
-    {Join()}
+    <Header/>
+    <Slider/>
+    <Services/>
+    <Community/>
   </>
   );
 }
