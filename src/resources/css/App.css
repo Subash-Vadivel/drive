@@ -1,5 +1,5 @@
 .Link {
-  background-image: url('./images/car.jpg');
+  background-image: url('../images/car.jpg');
   padding: 350px 20px;
   background-size: cover;
   background-attachment: fixed;
