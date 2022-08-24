@@ -129,7 +129,7 @@ return(<><Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="justify-content-end" style={{ width: "100%" }}>
-          <Nav.Link href="/home">Login</Nav.Link>
+          <Nav.Link href="/home">Lo</Nav.Link>
           <Nav.Link eventKey="link-1">Signup</Nav.Link>
         </Nav>
         </Navbar.Collapse>
