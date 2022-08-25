@@ -23,7 +23,8 @@ function Login() {
 
 
 
-  const handleLogin = () => {
+  const handleLogin = (event) => {
+    event.preventDefault();
     clearError();
     fire
       .auth()
@@ -43,7 +44,8 @@ function Login() {
         }
       })
   };
-  const handleSignup = () => {
+  const handleSignup = (event ) => {
+    event.preventDefault();
     clearError();
     fire
       .auth()
