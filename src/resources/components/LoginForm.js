@@ -4,13 +4,15 @@ function LoginForm(props)
     return (
     <>
             <div className='container-center'>
-              <div className='container-center-wrapper'>
+          <div className='container-center-wrapper'>
+            <h1>Welcome to Rido</h1><br /><br />
+
                 <form>
-                  <label>Username</label>
+              <label>Username :</label>{"  " }
                   <input type="text" required autoFocus value={email} onChange={e => setEmail(e.target.value)}></input>
                   <p >{emailError}</p>
           
-                  <label>Password</label>
+                  <label>Password :</label>{"  "}
                   <input type="password" required autoFocus value={password} onChange={e => setPassword(e.target.value)}></input>
                   <p >{passwordError}</p>
                   <div className='btnContainer'>
