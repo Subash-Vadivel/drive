@@ -34,14 +34,13 @@ function Login() {
           case "auth/user-disabled":
           case "auth/user-not-found":
             setEmailError(err.message);
-            console.log(err.message);
             break;
           case "auth/wrong-password":
             setPasswordError(err.message);
-            console.log(err.message);
             break;
         }
       })
+
   };
   const handleSignup = () => {
     clearError();
@@ -53,11 +52,9 @@ function Login() {
           case "auth/email-already-in-use":
           case "auth/invalid-email":
             setEmailError(err.message);
-            console.log(err.message);
             break;
           case "auth/weak-password":
             setPasswordError(err.message);
-            console.log(err.message);
             break;
         }
       })
@@ -65,7 +62,9 @@ function Login() {
   const handleLogout = () => {
     fire.auth().signOut();
   };
+  let n=0;
   const authListener = () => {
+    console.log(n)
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
         clearInput();
