@@ -1,0 +1,38 @@
+.nav-bar{
+    padding:20px 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(175,28,40);
+}
+.logo-wrapper{
+    width: 200px;
+    text-align: center;
+}
+.logo-wrapper >img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+.profile-wrapper{
+    gap: 20px;
+    display: flex;
+    align-items: center;
+}
+.profile-name{
+    font-size: large;
+    padding: 50% auto;
+    color: white;
+}
+.profile-pic{
+    background-color: white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+.profile-pic >img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
