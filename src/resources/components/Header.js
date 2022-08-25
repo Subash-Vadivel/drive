@@ -8,6 +8,7 @@ function Header(props)
       <div className="logo-wrapper">
              <img src={logo} alt="logo"/>
       </div>
+      <div className="brand">Rido</div>
       <div className="profile-wrapper">
             <div className="profile-name">Hello, Subash</div>
             <div className="profile-pic"><img src={profile} alt="profile"/></div>
