@@ -5,9 +5,9 @@ import Services from './resources/components/Services';
 import Header from './resources/components/Header';
 import Slider from './resources/components/Slider';
 import Community from './resources/components/Community';
-function Home() {
+function Home(props) {
   return (<>
-    <Header/>
+    <Header user={props.user}/>
     <Slider/>
     <Services/>
     <Community/>
