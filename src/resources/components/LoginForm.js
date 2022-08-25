@@ -4,13 +4,15 @@ function LoginForm(props)
     return (
     <>
             <div className='container-center'>
-              <div className='container-center-wrapper'>
+          <div className='container-center-wrapper'>
+            <h1>Welcome to Rido</h1><br /><br />
+
                 <form>
-                  <label>Username</label>
+              <label>Username :</label>{"  " }
                   <input type="text" required autoFocus value={email} onChange={e => setEmail(e.target.value)}></input>
                   <p >{emailError}</p>
           
-                  <label>Password</label>
+                  <label>Password :</label>{"  "}
                   <input type="password" required autoFocus value={password} onChange={e => setPassword(e.target.value)}></input>
                   <p >{passwordError}</p>
                   <div className='btnContainer'>
@@ -21,7 +23,7 @@ function LoginForm(props)
                       </>
                     ) : (<>
                       <button onClick={handleSignup}>Sign up</button>
-                      <p>Have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span></p>
+                      <p>Have an account ? <s><span onClick={() => setHasAccount(!hasAccount)}>Sign in</span></s></p>
                     </>)}
                   </div>
                 </form >

@@ -10,11 +10,12 @@ function Community()
       <br />
       <h1>Join with our Community</h1>
           <Row>
-              <Col md={6}>
-                  <img className="img-fluid" src={ca} width="100%"></img>
+          <Col md={6}>
+            <marquee direction="right">
+                  <img className="img-fluid" src={ca} width="100%"></img></marquee>
         </Col>
         <Col md={5}>
-        
+      
           <p>Join our Community and work together and reach customers fast and qucikly.
 
           </p>

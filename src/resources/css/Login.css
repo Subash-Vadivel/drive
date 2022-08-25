@@ -9,9 +9,24 @@
 text-align: center;
 align-items: center;
 justify-content: center;
-background-color: black;
-color: white;
-width: 40%;
-margin-left:30%;
+background: rgb(18, 5, 241);
+    background: linear-gradient(45deg, rgba(18, 5, 241, 1) 0%, rgba(131, 199, 97, 1) 35%, rgba(0, 212, 255, 1) 100%);
+width: 50%;
+margin-left:25%;
 
+padding: 100px 0px;
+
+}
+input{
+    border-radius: 10px;
+    background-color: bisque;
+}
+button{
+    border-radius: 3px;
+    font-size: 20px;
+    background-color: rgb(255, 13, 0);
+    color: azure;
+}
+s{
+    text-decoration: underline;
 }
