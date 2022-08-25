@@ -3,10 +3,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(175,28,40);
+    background-color:black;
+}
+.brand{
+    color: white;
+    text-align: start;
+    font-weight: bolder;
+    font-size: larger;
+    ;
 }
 .logo-wrapper{
-    width: 200px;
+    width: 100px;
     text-align: center;
 }
 .logo-wrapper >img{
