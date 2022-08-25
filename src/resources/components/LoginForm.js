@@ -23,7 +23,7 @@ function LoginForm(props)
                       </>
                     ) : (<>
                       <button onClick={handleSignup}>Sign up</button>
-                      <p>Have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span></p>
+                      <p>Have an account ? <s><span onClick={() => setHasAccount(!hasAccount)}>Sign in</span></s></p>
                     </>)}
                   </div>
                 </form >
