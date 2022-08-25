@@ -6,11 +6,15 @@
     background-color:black;
 }
 .brand{
-    color: white;
-    text-align: start;
-    font-weight: bolder;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-size: larger;
-    ;
+}
+.brandWrapper{
+    color: white;
+    font-weight: bolder;
+    padding: 50% auto;
 }
 .logo-wrapper{
     width: 100px;

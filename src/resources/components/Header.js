@@ -5,12 +5,14 @@ function Header(props)
 {
    return(
       <nav className="nav-bar">
+      <div className="brand">   
       <div className="logo-wrapper">
              <img src={logo} alt="logo"/>
       </div>
-      <div className="brand">Rido</div>
+      <div className="brandWrapper">Rido</div>
+      </div>
       <div className="profile-wrapper">
-            <div className="profile-name">Hello, Subash</div>
+            <div className="profile-name">Hello, {props.user}</div>
             <div className="profile-pic"><img src={profile} alt="profile"/></div>
       </div>
 </nav>
