@@ -1,4 +1,3 @@
-import Header from './resources/components/Header';
 import './resources/css/Login.css';
 import React, { useState, useEffect } from 'react';
 import fire from './fire';
@@ -6,12 +5,12 @@ import Home from './Home';
 import LoginForm from './resources/components/LoginForm';
 function Login() {
   const [user, setUser] = useState('');
-  const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
-
+  const [dis,setDis]=useState(0);
   const clearInput = () => {
     setEmail('');
     setPassword('');
@@ -39,6 +38,8 @@ function Login() {
           case "auth/wrong-password":
             setPasswordError(err.message);
             break;
+          default:
+            setDis(1);
         }
       })
 
@@ -58,22 +59,25 @@ function Login() {
           case "auth/weak-password":
             setPasswordError(err.message);
             break;
+          default:
+            setDis(0);
         }
       })
   };
   const handleLogout = () => {
     fire.auth().signOut();
   };
-  let n=0;
   const authListener = () => {
-    console.log(n)
+    
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
-        clearInput();
+             clearInput();
         setUser(user);
+        setDis(1);
       }
       else {
         setUser("");
+        setDis(0);
       }
     })
   };
@@ -85,7 +89,7 @@ function Login() {
   return (
   <>
       {
-        user ? (<Home />) :
+        user ? (<Home dis={dis} email={email} handleLogout={handleLogout}/>) :
           (<LoginForm
             email={email}
             setEmail={setEmail}

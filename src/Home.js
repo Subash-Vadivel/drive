@@ -7,7 +7,7 @@ import Slider from './resources/components/Slider';
 import Community from './resources/components/Community';
 function Home(props) {
   return (<>
-    <Header user={props.user}/>
+    <Header  dis={props.dis} email={props.email} handleLogout={props.handleLogout}/>
     <Slider/>
     <Services/>
     <Community/>
