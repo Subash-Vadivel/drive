@@ -7,10 +7,17 @@ import Slider from './resources/components/Slider';
 import Community from './resources/components/Community';
 function Home(props) {
   return (<>
-    <Header  dis={props.dis} email={props.email} handleLogout={props.handleLogout}/>
+  <header>
+    <Header email={props.email} handleLogout={props.handleLogout}/>
+    </header>
+    <main>
     <Slider/>
     <Services/>
     <Community/>
+    </main>
+    <footer>
+
+    </footer>
   </>
   );
 }

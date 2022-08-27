@@ -10,7 +10,6 @@ function Login() {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
-  const [dis,setDis]=useState(0);
   const clearInput = () => {
     setEmail('');
     setPassword('');
@@ -39,7 +38,6 @@ function Login() {
             setPasswordError(err.message);
             break;
           default:
-            setDis(1);
         }
       })
 
@@ -60,7 +58,6 @@ function Login() {
             setPasswordError(err.message);
             break;
           default:
-            setDis(0);
         }
       })
   };
@@ -73,11 +70,9 @@ function Login() {
       if (user) {
              clearInput();
         setUser(user);
-        setDis(1);
       }
       else {
         setUser("");
-        setDis(0);
       }
     })
   };
@@ -89,7 +84,7 @@ function Login() {
   return (
   <>
       {
-        user ? (<Home dis={dis} email={email} handleLogout={handleLogout}/>) :
+        user ? (<Home email={email} handleLogout={handleLogout}/>) :
           (<LoginForm
             email={email}
             setEmail={setEmail}
