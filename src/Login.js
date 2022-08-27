@@ -84,7 +84,7 @@ function Login() {
   return (
   <>
       {
-        user ? (<Home email={email} handleLogout={handleLogout}/>) :
+        user ? (<Home handleLogout={handleLogout}/>) :
           (<LoginForm
             email={email}
             setEmail={setEmail}

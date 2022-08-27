@@ -1,10 +1,9 @@
 import '../css/header.css';
 import logo from '../images/newlogo2.png';
-import profile from '../images/profile.webp';
 import Nav from 'react-bootstrap/Nav';
 
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Navbar,Container, NavbarBrand, Dropdown } from 'react-bootstrap';
+import { Navbar,Container } from 'react-bootstrap';
 function Header(props)
 {
    return(
