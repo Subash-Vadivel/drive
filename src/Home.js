@@ -5,17 +5,20 @@ import Services from './resources/components/Services';
 import Header from './resources/components/Header';
 import Slider from './resources/components/Slider';
 import Community from './resources/components/Community';
+import Footer from './resources/components/Footer';
 function Home(props) {
   return (<>
-    <Header  handleLogout={props.handleLogout}/>
-    <main>
+  <header>
+     <Header  handleLogout={props.handleLogout}/>
+  </header>
+  <main>
     <Slider/>
     <Services/>
     <Community/>
-    </main>
-    <footer>
-
-    </footer>
+  </main>
+  <footer>
+    <Footer/>
+  </footer>
   </>
   );
 }
