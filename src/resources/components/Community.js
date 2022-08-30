@@ -1,7 +1,6 @@
 import { Col, Row } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 
-import service from '../images/service.jpg';
 import ca from '../images/vcar.gif';
 function Community()
 {
@@ -19,7 +18,7 @@ function Community()
           <p>Join our Community and work together and reach customers fast and qucikly.
 
           </p>
-          <button>Join</button>
+          <button className='btn btn-primary btn-lg ' >Join</button>
         </Col>
       </Row>
   </Container>

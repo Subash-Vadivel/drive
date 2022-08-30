@@ -68,16 +68,6 @@
   padding: 15px;
 }
 
-.second button {
-  padding: 0px 20px;
-
-  font-size: 30px;
-  color: rgb(255, 252, 251);
-  background-color: rgb(250, 28, 3);
-  font-weight: 400;
-  border-radius: 5px 10px;
-  border-color: aliceblue;
-}
 
 .second p {
   font-size: 20px;
