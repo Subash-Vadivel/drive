@@ -33,10 +33,10 @@ function LoginForm(props)
                   </>)}
                 
                   </div>
+                  </form >
                   <div>
                   <button className="btn btn-primary" onClick={signInWithGoogle}>Sign in with Google</button>
                   </div>
-                  </form >
                   </div>
               </Col>
               <Col md={3} xs={1} sm={2}></Col>
