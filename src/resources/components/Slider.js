@@ -4,7 +4,7 @@ function Slider()
      return(<div className='Link'>
      <Container>
        <h1> Book Your Driver</h1>
-       <button variant="outline-primary">Book</button>
+       <button className='btn btn-outline-primary' >Book</button>
        <h3>WhatEver the condition our Driver's will ride safely</h3>
      </Container>
    </div>
