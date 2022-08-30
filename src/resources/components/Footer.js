@@ -10,7 +10,7 @@ function Footer()
     </Container>
     <Container fluid className='footer-main'>
         <Row className='foot-row'>
-            <Col xs={3}><ul type="none" className='foot-li'>
+            <Col sm={3}><ul type="none" className='foot-li'>
                 <li>About Rido</li>
                 <li>Home</li>
                 <li>Contact Us</li>
@@ -19,7 +19,7 @@ function Footer()
                 <li>Careers</li>
                 <li>Blog</li>
                 </ul></Col>
-            <Col xs={3}>
+            <Col sm={3}>
                 <ul type="none" className='foot-li'>
                     <li>Info</li>
                     <li>Fares</li>
@@ -30,7 +30,7 @@ function Footer()
                     {/* &#38; */}
                 </ul>
             </Col>
-            <Col xs={6}>
+            <Col sm={6}>
             <ul type="none" className='foot-li'>
                 <li>Availability</li>
                 <li>We are in</li>
