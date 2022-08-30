@@ -25,7 +25,7 @@ function LoginForm(props)
                     {hasAccount ? (
                       <>
                         <button className="btn btn-primary" onClick={handleLogin}>Sign in</button>
-                        <p>Don't have an account ? <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span></p>
+                        <p>Don't have an account ?<s> <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span></s></p>
                       </>
                     ) : (<>
                       <button className="btn btn-primary"  onClick={handleSignup}>Sign up</button>
