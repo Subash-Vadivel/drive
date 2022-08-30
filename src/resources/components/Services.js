@@ -2,7 +2,7 @@ import { Col, Row } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import React from 'react';
 import bus from '../images/cardriver.jpg';
-import lorry from '../images/bus.jpg';
+import lorry from '../images/truck.png';
 function Services()
 {
    return(<div className='ride'>
@@ -31,7 +31,7 @@ function Services()
        </Col>
        
        <Col md={6}>
-         <img className="img-fluid" src={lorry} width="100%"></img>
+         <img className="img-fluid" src={lorry} width="100%" alt=""></img>
 </Col>
      </Row>
        <br />
