@@ -20,7 +20,8 @@ function Community()
           </p>
           <button className='btn btn-primary btn-lg ' >Join</button>
         </Col>
-      </Row>
+        </Row>
+        <br />
   </Container>
   </div >);
 }
