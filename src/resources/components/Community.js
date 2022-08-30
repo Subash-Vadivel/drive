@@ -11,7 +11,7 @@ function Community()
           <Row>
           <Col md={6}>
             <marquee direction="right">
-                  <img className="img-fluid" src={ca} width="100%"></img></marquee>
+                  <img className="img-fluid" src={ca} alt="image" width="100%"></img></marquee>
         </Col>
         <Col md={5}>
       
