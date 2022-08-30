@@ -1,6 +1,5 @@
 import { Row,Col,Container } from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap';
+import { signInWithGoogle } from "../../fire";
 function LoginForm(props)
 {
     const { email, setEmail, password, setPassword, handleLogin, handleSignup, hasAccount, setHasAccount, emailError, passwordError } = props;
@@ -33,6 +32,9 @@ function LoginForm(props)
                       <p>Have an account ? <s><span onClick={() => setHasAccount(!hasAccount)}>Sign in</span></s></p>
                   </>)}
                 
+                  </div>
+                  <div>
+                  <button className="btn btn-primary" onClick={signInWithGoogle}>Sign in with Google</button>
                   </div>
                   </form >
                   </div>

@@ -2,6 +2,7 @@
 import fire from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,6 +19,28 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
- fire.initializeApp(firebaseConfig);
+const f=fire.initializeApp(firebaseConfig);
 // const analytics = getAnalytics(fire);
+export const auth = getAuth(f);
+const provider = new GoogleAuthProvider();
+
+export const signInWithGoogle = () => {
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      // const name = result.user.displayName;
+      // const email = result.user.email;
+      // const profilePic = result.user.photoURL;
+
+      // localStorage.setItem("name", name);
+      // localStorage.setItem("email", email);
+      // localStorage.setItem("profilePic", profilePic);
+      // <h1>{localStorage.getItem("name")}</h1>
+      // <h1>{localStorage.getItem("email")}</h1>
+      // <img src={localStorage.getItem("profilePic")} />
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 export default fire;
