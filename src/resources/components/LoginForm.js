@@ -11,7 +11,7 @@ function LoginForm(props)
               <Col md={3} xs={1} sm={2} ></Col>
               <Col md={6} xs={10} sm={8} >
                 <div className='center-form'>
-              <h1> Ridos</h1><br /><br />
+              <h1> Rido</h1><br /><br />
 
                 <form>
               <label>Username :</label>{"  " }
