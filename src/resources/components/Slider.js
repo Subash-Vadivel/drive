@@ -1,13 +1,64 @@
-import Container from 'react-bootstrap/Container';
+
+import { Carousel } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function Slider()
 {
-     return(<div className='Link'>
-     <Container>
-       <h1> Rido Your Driver Partner</h1>
-       <button className='btn btn-secondary btn-lg' >Book</button>
-       <h3>WhatEver the condition our Driver's will ride safely</h3>
-     </Container>
-   </div>
+     return(
+      <>
+      <div>
+                <div className='container-fluid' >
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <h3>React Bootstrap Carousel</h3>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12">
+                            <Carousel>
+ 
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block w-100"
+                                        src="https://picsum.photos/500/300?img=1"
+                                        alt="First slide"
+                                    />
+                                    <Carousel.Caption>
+                                        <h3>First slide label</h3>
+                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+ 
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block w-100"
+                                        src="https://picsum.photos/500/300?img=2"
+                                        alt="Second slide"
+                                    />
+ 
+                                    <Carousel.Caption>
+                                        <h3>Second slide label</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+ 
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block w-100"
+                                        src="https://picsum.photos/500/300?img=3"
+                                        alt="Third slide"
+                                    />
+                                    <Carousel.Caption>
+                                        <h3>Third slide label</h3>
+                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    </Carousel.Caption>
+                                </Carousel.Item>
+ 
+                            </Carousel>
+                            </div>
+                    </div>
+                </div>
+            </div>
+      </>
      );
 }
 export default Slider;

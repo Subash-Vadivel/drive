@@ -6,10 +6,12 @@ function Offers()
 {
     return (<>
        <Container>
+        <div className='offer-zone'>
         <h2>Offers For You...</h2>
-        <Row>
+        </div>
+        <Row className='offer-cards'>
             <Col  md={4}>
-            <Card classname="offer-cards">
+            <Card >
                   <Card.Img variant="top" src={offers} />
                    <Card.Body>
                    <Card.Title>Coimbatore to Erode</Card.Title>
