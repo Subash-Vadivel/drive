@@ -1,0 +1,11 @@
+.imgsz
+{
+    height: 400px;
+    width: 100%;
+}
+.mid{
+    align-items: center;
+}
+.txtHead{
+    color: black;
+}

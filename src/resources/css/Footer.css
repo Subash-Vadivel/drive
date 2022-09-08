@@ -10,6 +10,7 @@
 
 .foot-li>li:hover{  
     color: red;
+    cursor: pointer;
  }
 .footer-main{
     
