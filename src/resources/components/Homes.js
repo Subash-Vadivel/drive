@@ -7,12 +7,12 @@ import Support from "./Support";
 function Homes() {
   return (
     <>
-      {/* <Slider/>
-    <Offers/>
-    <Trip/>
-    <Services/>
-    <Community/> */}
-      <Support />
+      <Slider />
+      <Offers />
+      <Trip />
+      <Services />
+      <Community />
+      {/* <Support /> */}
     </>
   );
 }
