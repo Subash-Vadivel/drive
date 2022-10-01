@@ -26,7 +26,7 @@ function Header(props)
                                     <NavDropdown.Item className='nav-drop-down'>Road Side Assistance</NavDropdown.Item>
                               </NavDropdown>
                               <Nav.Link className='nav-link' href='/'>Your Rides</Nav.Link>
-                              <Nav.Link className='nav-link' href='/'>About us</Nav.Link>
+                              <Nav.Link className='nav-link' href='/' >About us</Nav.Link>
                               <Nav.Link className='nav-link' href='/'>Support</Nav.Link>
                               <Nav.Link className='nav-linkop' onClick={props.handleLogout}>Log Out</Nav.Link>                              
                         </Nav>
