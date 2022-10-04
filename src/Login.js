@@ -2,9 +2,11 @@ import './resources/css/Login.css';
 import React, { useState, useEffect } from 'react';
 import fire from './fire';
 import Home from './Home';
+import {Navigate} from 'react-router';
 import LoginForm from './resources/components/LoginForm';
 function Login() {
   const [user, setUser] = useState('');
+  const [flag,setFlag]=useState('');
     const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -62,6 +64,7 @@ function Login() {
       })
   };
   const handleLogout = () => {
+      setFlag('1');
     fire.auth().signOut();
   };
   const authListener = () => {
@@ -69,6 +72,7 @@ function Login() {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
              clearInput();
+            setFlag('');
         setUser(user);
       }
       else {
@@ -84,8 +88,9 @@ function Login() {
   return (
   <>
       {
-        user ? (<Home handleLogout={handleLogout}/>) :
-          (<LoginForm
+        user ? (<Home handleLogout={handleLogout} user={user}/>) :
+
+          (flag ? (<Navigate to='/'/>):(<LoginForm
             email={email}
             setEmail={setEmail}
             password={password}
@@ -97,7 +102,8 @@ function Login() {
             emailError={emailError}
             passwordError={passwordError}
 
-          />)}
+          />)
+          )}
       </>
        
 

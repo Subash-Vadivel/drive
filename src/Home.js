@@ -9,7 +9,7 @@ function Home(props) {
   return (
     <>
       <header>
-        <Header handleLogout={props.handleLogout} />
+        <Header handleLogout={props.handleLogout} user={props.user} />
       </header>
       <main>
         {<Homes />}

@@ -82,5 +82,22 @@
     height: 100%;
     object-fit: contain;
 }
-
+.loginBtn{
+    text-decoration: none;
+    color:red;
+    font-size:large;
+    margin-right: 30px;
+}
+.loginBtn:hover{
+    color: black;
+}
+.routeBtn{
+    text-decoration: none;
+    color:black;
+    font-size:large;
+    margin-right: 15px;
+}
+.routeBtn:hover{
+    color: red;
+}
 /* finish */
