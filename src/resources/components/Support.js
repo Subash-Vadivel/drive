@@ -11,11 +11,11 @@ function Support() {
     </header>
     <main>
       <Container >
-        <h2>Support</h2>
+        <h2 className="head-support">Support</h2>
         <img src={support} className="imgsz" alt="..."></img>
         <br />
         <br />
-        <h3>Send us your Query</h3>
+        <h3 className="center-msg">Send us your Query</h3>
         <form>
           <input type="text"></input>
         </form>
