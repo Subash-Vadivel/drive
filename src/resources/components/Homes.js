@@ -10,9 +10,8 @@ function Homes() {
       <Slider />
       <Offers />
       <Trip />
-      <Services />
       <Community />
-      {/* <Support /> */}
+      <Support />
     </>
   );
 }

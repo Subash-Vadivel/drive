@@ -20,11 +20,12 @@ function Header(props)
                   <Navbar.Collapse id='responsive-navbar-nav'>
                         <Nav className='ms-auto'>
                               <Nav.Link className='nav-link' href='/'>Home</Nav.Link>
-                              <NavDropdown  title="Services"  id="navbarScrollingDropdown">
+                              {/* <NavDropdown  title="Services"  id="navbarScrollingDropdown">
                                     <NavDropdown.Item className='nav-drop-down'>Booking</NavDropdown.Item>
                                     <NavDropdown.Item className='nav-drop-down' >Hire Drivers</NavDropdown.Item>
                                     <NavDropdown.Item className='nav-drop-down'>Road Side Assistance</NavDropdown.Item>
-                              </NavDropdown>
+                              </NavDropdown> */}
+                              <Nav.Link className='nav-link' href='/'>Booking</Nav.Link>
                               <Nav.Link className='nav-link' href='/'>Your Rides</Nav.Link>
                               <Nav.Link className='nav-link' href='/' >About us</Nav.Link>
                               <Nav.Link className='nav-link' href='/'>Support</Nav.Link>
