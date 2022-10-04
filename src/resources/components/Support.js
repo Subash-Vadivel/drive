@@ -1,24 +1,30 @@
 import support from "../images/support.jpg";
 import { Container } from "react-bootstrap";
 import "../css/Support.css";
-
+import Header from "./Header";
+import Footer from "./Footer";
 function Support() {
   return (
     <>
-      <Container>
+    <header>
+    <Header/>
+    </header>
+    <main>
+      <Container >
+        <h2>Support</h2>
         <img src={support} className="imgsz" alt="..."></img>
         <br />
         <br />
-        <div className="call">
-          <h1>Feel free to contact</h1>
-          <p>
-            Phone Number:<t>9361611111</t>
-          </p>
-          <p>
-            Email:<t>vishnuk55265@gmail.com</t>
-          </p>
-        </div>
+        <h3>Send us your Query</h3>
+        <form>
+          <input type="text"></input>
+        </form>
       </Container>
+      </main>
+      <footer>
+      <Footer/>
+      </footer>
+    
     </>
   );
 }

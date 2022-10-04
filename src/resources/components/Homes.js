@@ -3,7 +3,6 @@ import Slider from "./Slider";
 import Community from "./Community";
 import Offers from "./Offers";
 import Trip from "./Triptypes";
-import Support from "./Support";
 function Homes() {
   return (
     <>
@@ -11,7 +10,6 @@ function Homes() {
       <Offers />
       <Trip />
       <Community />
-      <Support />
     </>
   );
 }

@@ -3,14 +3,13 @@ import logo from '../images/newlogo5.png';
 import Nav from 'react-bootstrap/Nav';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Navbar,Container } from 'react-bootstrap';
-import Login from '../../Login';
-import Home from '../../Home';
-import { Routes,BrowserRouter, Link, Route} from 'react-router-dom';
+
+import {  Link} from 'react-router-dom';
 function Header(props)
 {
    return(
       <>
-      <Navbar className="color-nav" collapseOnSelect fixed='top' expand='md'>
+      <Navbar className="color-nav" collapseOnSelect fixed="top" expand='md'>
             <Container>
                   <Navbar.Brand>
                               <div className="logo-wrapper">
