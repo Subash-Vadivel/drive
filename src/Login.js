@@ -4,7 +4,7 @@ import fire from './fire';
 import Home from './Home';
 import {Navigate} from 'react-router';
 import LoginForm from './resources/components/LoginForm';
-function Login() {
+function Login(props) {
   const [user, setUser] = useState('');
   const [flag,setFlag]=useState('');
     const [email, setEmail] = useState('');
