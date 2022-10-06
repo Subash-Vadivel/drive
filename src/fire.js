@@ -9,8 +9,10 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
+  
   apiKey: "AIzaSyDz0OuhxDtWvT9XrxYXrY7E2XOo7UgE6Ww",
   authDomain: "drive-3d71e.firebaseapp.com",
+  databaseURL: "https://drive-3d71e-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "drive-3d71e",
   storageBucket: "drive-3d71e.appspot.com",
   messagingSenderId: "853529338505",
@@ -20,6 +22,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const f=fire.initializeApp(firebaseConfig);
+
+export const db=f.firestore();
+
+
+
 // const analytics = getAnalytics(fire);
 export const auth = getAuth(f);
 const provider = new GoogleAuthProvider();

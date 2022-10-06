@@ -9,22 +9,17 @@ function About()
     return (<>
     <Header/>
     <Container>
-        <Row>    
-            <Col md={3} sm={3}></Col>
-            <Col md={6} sm={6}>
-            <img src={abt} className="imgsz" alt="..."></img>
-            </Col>
-            <Col md={3} sm={3}></Col>
-        </Row>
         <Row>
             <Col>
             <h2 className='txtHead'>About Us</h2><br></br>
             </Col>
         </Row>
         <Row>
-            <Col md={1}></Col>
-            <Col md={10}><img src={abt1} className="imgsz" alt="..."></img></Col>
-            <Col md={3}></Col>
+            <Col md={3} sm={3}></Col>
+            <Col md={6} sm={6}>
+            <img src={abt} className="imgsz" alt="..."></img>
+            </Col>
+            <Col md={3} sm={3}></Col>
         </Row>
         <Row>
             <Container>
