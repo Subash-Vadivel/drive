@@ -6,7 +6,31 @@ import Footer from "./Footer";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Row, Col } from "react-bootstrap";
+import { db } from "../../fire";
+import { useState } from "react";
 function Support() {
+  const [name, setName] = useState("");
+
+  const [email, setEmail] = useState("");
+
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    db.collection("contacts")
+      .add({
+        name: name,
+        email: email,
+        message: message,
+      })
+      .then(() => {
+        alert("Thanks for your valuable comment");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
   return (
     <>
       <header>
@@ -21,14 +45,32 @@ function Support() {
           <br />
           <h3>Send us your Query</h3>
 
-          <form className="mb-3" controlId="formBasicEmail">
+          <form
+            className="mb-3"
+            controlId="formBasicEmail"
+            onSubmit={handleSubmit}
+          >
             <Row>
               <Col>
-                <Form.Control type="email" placeholder="Email"></Form.Control>
+                <Form.Control
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                ></Form.Control>
                 <br />
               </Col>
               <Col>
-                <Form.Control type="text" placeholder="Name"></Form.Control>
+                <Form.Control
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
+                ></Form.Control>
                 <br />
               </Col>
             </Row>
@@ -46,10 +88,14 @@ function Support() {
               as="textarea"
               placeholder="Your Message"
               rows={3}
+              value={message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
             ></Form.Control>
             <br />
             <div className="center">
-              <Button variant="secondary" size="lg">
+              <Button variant="secondary" type="submit" size="lg">
                 Submit
               </Button>
             </div>
