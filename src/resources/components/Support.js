@@ -29,6 +29,9 @@ function Support() {
       .catch((error) => {
         alert(error.message);
       });
+    setEmail("");
+    setMessage("");
+    setName("");
   };
 
   return (
