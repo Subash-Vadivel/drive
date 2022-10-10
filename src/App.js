@@ -41,7 +41,7 @@ function App(){
     <Route  path='/login' element={<Login setUserStatus={setUserStatus} user={userstatus}/>}></Route>
     <Route exact path='/about' element={<About/>}></Route>
     <Route exact path='/support' element={<Support/>}></Route>
-    <Route  path='/bookings' element={<Bookings/>}></Route>
+    <Route  path='/bookings' element={<Bookings user={userstatus}/>}></Route>
 
   </Routes>
   

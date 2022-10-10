@@ -1,13 +1,52 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import Footer from "./Footer";
-import Header from "./Header";
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Row, Col } from "react-bootstrap";
 import "../css/Booking.css";
 import booking from "../images/booking.jpg";
-const Bookings = () => {
+import { db } from "../../fire";
+
+import { useState } from "react";
+
+
+
+
+
+const Bookings = (props) => {
+
+  
+const [name, setName] = useState("");
+
+const [email, setEmail] = useState("");
+
+const [mobile, setMobile] = useState("");
+
+
+
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  db.collection('users').doc(props.user.uid).collection(email)
+    .add({
+      name: name,
+      email: email,
+      mobile: mobile,
+    })
+    .then(() => {
+      alert("Booking Successfull");
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+  setEmail("");
+  setMobile("");
+  setName("");
+};
+
+
+
   return (
     <>
       <main>
@@ -18,7 +57,7 @@ const Bookings = () => {
           </div>
 
           <div className="booking">
-            <form className="mb-3" controlId="formBasicEmail">
+            <form className="mb-3" controlId="formBasicEmail" onSubmit={handleSubmit}>
               <Row>
                 <Col md={6}>
                   <Form.Label>Email</Form.Label>
@@ -26,6 +65,10 @@ const Bookings = () => {
                     type="email"
                     placeholder="Your Email"
                     required
+                    value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   ></Form.Control>
                   <br />
                   <Form.Label>Mobile Number</Form.Label>
@@ -33,11 +76,15 @@ const Bookings = () => {
                     type="number"
                     placeholder="Your mobile Number"
                     required
+                    value={mobile}
+                    onChange={(e) => {
+                      setMobile(e.target.value);
+                    }}
                   ></Form.Control>
                   <br />
                   <Form.Label>Choose Trip Type</Form.Label>
                   <Form.Select placeholder="Triptype" required>
-                    <option value="1" selected></option>
+                    <option value="1" defaultValue></option>
                     <option value="2">RoundTrip</option>
                     <option value="3">OneTrip</option>
                     <option value="4">Hourly Rental</option>
@@ -55,6 +102,10 @@ const Bookings = () => {
                     type="text"
                     placeholder="Your Name"
                     required
+                    value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
                   ></Form.Control>
                   <br />
                   <Form.Label>Alternate Number</Form.Label>
