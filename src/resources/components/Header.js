@@ -9,6 +9,9 @@ function Header(props)
 {
    return(
       <>
+      {
+            console.log(localStorage.getItem('uid'))
+      }
       <Navbar className="color-nav" collapseOnSelect fixed="top" expand='md'>
             <Container>
                   <Navbar.Brand>

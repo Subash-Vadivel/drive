@@ -77,6 +77,7 @@ function Login(props) {
       if (user) {
              clearInput();
             setFlag('');
+            localStorage.setItem('uid',user.user.id);
             localStorage.setItem('auth','true');
         setUser(user);
       }
