@@ -68,7 +68,7 @@ function Login(props) {
   const handleLogout = () => {
       setFlag('1');
       
-    localStorage.setItem('auth','')
+    localStorage.setItem('auth',"");
     fire.auth().signOut();
   };
   const authListener = () => {
@@ -77,13 +77,12 @@ function Login(props) {
       if (user) {
              clearInput();
             setFlag('');
-            localStorage.setItem('uid',user.user.id);
             localStorage.setItem('auth','true');
         setUser(user);
       }
       else {
         setUser("");
-        localStorage.setItem('auth','');
+        localStorage.setItem('auth',"");
       }
     })
   };
