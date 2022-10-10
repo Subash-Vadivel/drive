@@ -4,7 +4,7 @@ import "./resources/css/App.css";
 import Header from "./resources/components/Header";
 import Footer from "./resources/components/Footer";
 import Homes from "./resources/components/Homes";
-import Partner from "./resources/components/Part";
+import Partner from "./resources/components/Partner";
 function Home(props) {
   return (
     <>
