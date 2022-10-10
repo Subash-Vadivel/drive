@@ -41,7 +41,9 @@ function Login(props) {
             break;
           default:
         }
-      })
+      });
+      
+ 
 
   };
   const handleSignup = (event ) => {
@@ -65,6 +67,8 @@ function Login(props) {
   };
   const handleLogout = () => {
       setFlag('1');
+      
+    localStorage.setItem('auth','')
     fire.auth().signOut();
   };
   const authListener = () => {
@@ -73,10 +77,12 @@ function Login(props) {
       if (user) {
              clearInput();
             setFlag('');
+            localStorage.setItem('auth','true');
         setUser(user);
       }
       else {
         setUser("");
+        localStorage.setItem('auth','');
       }
     })
   };
