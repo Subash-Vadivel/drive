@@ -10,7 +10,6 @@ import booking from "../images/booking.jpg";
 const Bookings = () => {
   return (
     <>
-      <Header />
       <main>
         <Container>
           <div className="book">
@@ -100,7 +99,6 @@ const Bookings = () => {
           </div>
         </Container>
       </main>
-      <Footer />
     </>
   );
 };

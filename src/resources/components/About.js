@@ -7,7 +7,7 @@ import Footer from './Footer';
 function About()
 {
     return (<>
-    <Header/>
+   
     <Container>
         <Row>
             <Col>
@@ -52,7 +52,7 @@ function About()
             <Col md={3}></Col>
         </Row>
     </Container>
-    <Footer/> 
+   
     </>);
 }
 export default About;

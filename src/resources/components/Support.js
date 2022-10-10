@@ -1,8 +1,6 @@
 import support from "../images/support.jpg";
 import { Container } from "react-bootstrap";
 import "../css/Support.css";
-import Header from "./Header";
-import Footer from "./Footer";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Row, Col } from "react-bootstrap";
@@ -36,9 +34,7 @@ function Support() {
 
   return (
     <>
-      <header>
-        <Header />
-      </header>
+      
       <main>
         <Container>
           <h2>Support</h2>
@@ -105,9 +101,7 @@ function Support() {
           </form>
         </Container>
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      
     </>
   );
 }

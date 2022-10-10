@@ -2,8 +2,12 @@ import './resources/css/Login.css';
 import React, { useState, useEffect } from 'react';
 import fire from './fire';
 import Home from './Home';
-import {Navigate} from 'react-router';
+
 import LoginForm from './resources/components/LoginForm';
+
+
+import {useNavigate,  Link} from 'react-router-dom';
+
 function Login(props) {
   const [user, setUser] = useState('');
   const [flag,setFlag]=useState('');
@@ -13,6 +17,8 @@ function Login(props) {
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(false);
   const clearInput = () => {
+    
+   
     setEmail('');
     setPassword('');
   };
@@ -65,24 +71,30 @@ function Login(props) {
         }
       })
   };
-  const handleLogout = () => {
-      setFlag('1');
+  // const handleLogout = () => {
+  //     setFlag('1');
       
-    localStorage.setItem('auth',"");
-    fire.auth().signOut();
-  };
+  //   localStorage.setItem('auth',"");
+  //   fire.auth().signOut();
+  // };
   const authListener = () => {
     
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
              clearInput();
-            setFlag('');
-            localStorage.setItem('auth','true');
+             
+            // setFlag('');
+            props.setUserStatus(user);
         setUser(user);
+        
+        
+     
       }
       else {
+        
         setUser("");
-        localStorage.setItem('auth',"");
+        props.setUserStatus('');
+        
       }
     })
   };
@@ -90,13 +102,21 @@ function Login(props) {
   useEffect(() => {
     authListener();
   }, []);
+
   
+  const navigate = useNavigate(); 
   return (
+    
   <>
       {
-        user ? (<Home handleLogout={handleLogout} user={user}/>) :
 
-          (flag ? (<Navigate to='/'/>):(<LoginForm
+        // <Home handleLogout={handleLogout} user={user}/> 
+        // navigate('/home',{state:{id:1,logout:props.handleLogout}})
+        // ()=>{navigate('/')
+      
+        user ? ( navigate('/')) :
+
+          ((<LoginForm
             email={email}
             setEmail={setEmail}
             password={password}
@@ -108,7 +128,7 @@ function Login(props) {
             emailError={emailError}
             passwordError={passwordError}
 
-          />)
+          />) 
           )}
       </>
        
