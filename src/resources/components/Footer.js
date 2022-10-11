@@ -1,7 +1,7 @@
 import '../css/Footer.css';
 import { Row,Col,Container } from 'react-bootstrap';
 import logofoot from '../images/newlogo2.png';
-
+import { SocialIcon } from 'react-social-icons';
 import {useNavigate} from 'react-router-dom';
 function Footer()
 {
@@ -14,11 +14,11 @@ function Footer()
     <Container fluid className='footer-main'>
         <Row className='foot-row'>
             <Col sm={3} xs={6}><ul type="none" className='foot-li'>
-                <li>About Rido</li>
-                <li>Home</li>
-                <li>Contact Us</li>
+                <li onClick={()=>{navigate('/about')}}>About Rido</li>
+                <li onClick={()=>{navigate('/')}}>Home</li>
+                <li onClick={()=>{navigate('/support')}}>Contact Us</li>
                 <li>Offers</li>
-                <li>Support</li>
+                <li  onClick={()=>{navigate('/support')}}>Support</li>
                 <li>Careers</li>
                 <li>Blog</li>
                 </ul></Col>
@@ -37,6 +37,11 @@ function Footer()
             <ul type="none" className='foot-li'>
                 <li>Availability</li>
                 <li>We are in</li>
+                <br></br>
+                <SocialIcon url="https://jaketrent.com" bgColor="#4267B2" fgColor="#FEFEFE" network="facebook" style={{marginRight:"20px"}}/>
+                
+                <SocialIcon url="https://jaketrent.com" bgColor="#4267B2" fgColor="#FEFEFE" network="instagram" style={{marginRight:"20px"}}/>
+                <SocialIcon url="https://jaketrent.com" bgColor="#4267B2" fgColor="#FEFEFE" network="twitter" style={{marginRight:"20px"}}/>
                 </ul>
                 </Col>
         </Row>
