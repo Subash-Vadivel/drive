@@ -23,16 +23,38 @@ const [email, setEmail] = useState("");
 
 const [mobile, setMobile] = useState("");
 
+const [comment, setComment] = useState("");
+
+const [triptype, setTriptype] = useState("");
+
+
+const [altmobile, setAltmobile] = useState("");
+
+const [pickuploc, setPickuploc] = useState("Erode");
+
+const [pickupdate, setPickupdate] = useState("");
+
+
+const [pickuptime, setPickuptime] = useState("");
 
 
 
 const handleSubmit = (e) => {
+  
   e.preventDefault();
+  if(props.user)
+  {
   db.collection('users').doc(props.user.uid).collection(email)
     .add({
       name: name,
       email: email,
       mobile: mobile,
+      comment:comment,
+      triptype:triptype,
+      pickuploc:pickuploc,
+      altmobile:altmobile,
+      pickupdate:pickupdate,
+      pickuptime:pickuptime,
     })
     .then(() => {
       alert("Booking Successfull");
@@ -43,6 +65,18 @@ const handleSubmit = (e) => {
   setEmail("");
   setMobile("");
   setName("");
+  setComment("");
+  setTriptype("");
+  setPickuploc("Erode");
+  setAltmobile("");
+  setPickuptime("");
+  setPickupdate("");
+  }
+  else
+  {
+    alert("Session Out Please Login Again");
+  }
+
 };
 
 
@@ -83,17 +117,24 @@ const handleSubmit = (e) => {
                   ></Form.Control>
                   <br />
                   <Form.Label>Choose Trip Type</Form.Label>
-                  <Form.Select placeholder="Triptype" required>
+                  <Form.Select placeholder="Triptype" required  defaultValue={triptype}
+                  onChange={(e) => {
+                    setTriptype(e.target.value);
+                  }}>
                     <option value="1" defaultValue></option>
-                    <option value="2">RoundTrip</option>
-                    <option value="3">OneTrip</option>
-                    <option value="4">Hourly Rental</option>
+                    <option value="RoundTrip">RoundTrip</option>
+                    <option value="OneTrip">OneTrip</option>
+                    <option value="Hourly Rental">Hourly Rental</option>
                   </Form.Select>
                   <br />
                   <Form.Label>Pickup Time</Form.Label>
                   <Form.Control
                     type="time"
                     placeholder="Your pick Time"
+                    value={pickuptime}
+                  onChange={(e) => {
+                    setPickuptime(e.target.value);
+                  }}
                   ></Form.Control>
                 </Col>
                 <Col md={6}>
@@ -112,6 +153,10 @@ const handleSubmit = (e) => {
                   <Form.Control
                     type="number"
                     placeholder="Your Alternate Number"
+                    value={altmobile}
+                    onChange={(e) => {
+                      setAltmobile(e.target.value);
+                    }}
                   ></Form.Control>
                   <br />
                   <Form.Label>Pickup Date</Form.Label>
@@ -119,17 +164,24 @@ const handleSubmit = (e) => {
                     type="date"
                     placeholder="Your pick Date"
                     required
+                    value={pickupdate}
+                  onChange={(e) => {
+                    setPickupdate(e.target.value);
+                  }}
                   ></Form.Control>
                   <br />
                   <Form.Label>Choose PickUp Location</Form.Label>
-                  <Form.Select required>
-                    <option value="1" selected>
+                  <Form.Select required defaultValue={pickuploc}
+                  onChange={(e) => {
+                    setPickuploc(e.target.value);
+                  }}>
+                    <option value="Erode" selected>
                       Erode
                     </option>
-                    <option value="2">Chennai</option>
-                    <option value="3">Coimbatore</option>
-                    <option value="4">Tirupur</option>
-                    <option value="5">Madurai</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Tirupur">Tirupur</option>
+                    <option value="Madurai">Madurai</option>
                   </Form.Select>
                   <br />
                 </Col>
@@ -139,6 +191,10 @@ const handleSubmit = (e) => {
                 as="textarea"
                 placeholder="Your Message"
                 rows={3}
+                value={comment}
+                onChange={(e) => {
+                  setComment(e.target.value);
+                }}
               ></Form.Control>
               <br />
               <div className="center">
