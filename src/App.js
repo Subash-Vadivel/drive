@@ -15,7 +15,7 @@ import Support from './resources/components/Support';
 import fire from './fire';
 import Partner from './resources/components/Partner';
 
-
+import ClimbingBoxLoader from "react-spinners/HashLoader";
 function App(){
    
 
@@ -28,31 +28,54 @@ function App(){
     setUserStatus('');
     fire.auth().signOut();
     };
+
+
+const [loading,setLoading]=useState(false);
+    useEffect(()=>{
+      setLoading(true)
+      setTimeout(()=>{
+         setLoading(false);
+      },4000)
+    },[])
   return (
 
 
    <>
    
-   <BrowserRouter>
-  <header>
-  {/* handleLogout={props.handleLogout} user={props.user} */}
-  {console.log(userstatus)}
-        <Header  handleLogout={handleLogout} setUserStatus={setUserStatus} user={userstatus}/>
-      </header>
-  <Routes>
+   {loading?(
+   <div className="loader">
+   <ClimbingBoxLoader
+    color={"red"}
+    loading={loading}
+    size={80}
+  />
   
-    <Route path='/' element={<Home/>}></Route>
-    <Route  path='/login' element={<Login setUserStatus={setUserStatus} user={userstatus}/>}></Route>
-    <Route exact path='/about' element={<About/>}></Route>
-    <Route exact path='/support' element={<Support/>}></Route>
-    <Route  path='/bookings' element={<Bookings user={userstatus}/>}></Route>
-    <Route  path='/becomemember' element={<Partner user={userstatus}/>}></Route>
-  </Routes>
-  
-  <footer>
-        <Footer />
-      </footer>
-  </BrowserRouter>
+  </div>
+   ):
+   (
+    <BrowserRouter>
+    <header>
+    {/* handleLogout={props.handleLogout} user={props.user} */}
+    {console.log(userstatus)}
+          <Header  handleLogout={handleLogout} setUserStatus={setUserStatus} user={userstatus}/>
+        </header>
+    <Routes>
+    
+      <Route path='/' element={<Home/>}></Route>
+      <Route  path='/login' element={<Login setUserStatus={setUserStatus} user={userstatus}/>}></Route>
+      <Route exact path='/about' element={<About/>}></Route>
+      <Route exact path='/support' element={<Support/>}></Route>
+      <Route  path='/bookings' element={<Bookings user={userstatus}/>}></Route>
+      <Route  path='/becomemember' element={<Partner user={userstatus}/>}></Route>
+    </Routes>
+    
+    <footer>
+          <Footer />
+        </footer>
+    </BrowserRouter>
+    
+   )
+  }
    
    </>
   )
