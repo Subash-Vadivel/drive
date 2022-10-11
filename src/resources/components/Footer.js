@@ -2,8 +2,11 @@ import '../css/Footer.css';
 import { Row,Col,Container } from 'react-bootstrap';
 import logofoot from '../images/newlogo2.png';
 
+import {useNavigate} from 'react-router-dom';
 function Footer()
 {
+    
+    const navigate = useNavigate();
     return(<>
     <Container className='footer-top'>
         <span className='footer-top-item'><img src={logofoot} alt="..."/></span>
@@ -24,7 +27,7 @@ function Footer()
                     <li>Info</li>
                     <li>Fares</li>
                     <li>Business Partner</li>
-                    <li>Become a Driver</li>
+                    <li onClick={()=>{navigate('/becomemember')}}>Become a Driver</li>
                     <li>Privacy Policy</li>
                     <li>Terms & Conditions</li>
                     {/* &#38; */}

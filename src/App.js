@@ -13,6 +13,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Support from './resources/components/Support';
 
 import fire from './fire';
+import Partner from './resources/components/Partner';
 
 
 function App(){
@@ -45,7 +46,7 @@ function App(){
     <Route exact path='/about' element={<About/>}></Route>
     <Route exact path='/support' element={<Support/>}></Route>
     <Route  path='/bookings' element={<Bookings user={userstatus}/>}></Route>
-
+    <Route  path='/becomemember' element={<Partner user={userstatus}/>}></Route>
   </Routes>
   
   <footer>
