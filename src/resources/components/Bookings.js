@@ -10,78 +10,63 @@ import { db } from "../../fire";
 
 import { useState } from "react";
 
-
-
-
-
 const Bookings = (props) => {
+  const [name, setName] = useState("");
 
-  
-const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
-const [email, setEmail] = useState("");
+  const [mobile, setMobile] = useState("");
 
-const [mobile, setMobile] = useState("");
+  const [comment, setComment] = useState("");
 
-const [comment, setComment] = useState("");
+  const [triptype, setTriptype] = useState("RoundTrip");
 
-const [triptype, setTriptype] = useState("");
+  const [altmobile, setAltmobile] = useState("");
 
+  const [pickuploc, setPickuploc] = useState("Erode");
 
-const [altmobile, setAltmobile] = useState("");
+  const [pickupdate, setPickupdate] = useState("");
 
-const [pickuploc, setPickuploc] = useState("Erode");
+  const [pickuptime, setPickuptime] = useState("");
 
-const [pickupdate, setPickupdate] = useState("");
-
-
-const [pickuptime, setPickuptime] = useState("");
-
-
-
-const handleSubmit = (e) => {
-  
-  e.preventDefault();
-  if(props.user)
-  {
-    // 
-  db.collection('users').doc(props.user.uid).collection(props.user.email)
-    .add({
-      name: name,
-      email: email,
-      mobile: mobile,
-      comment:comment,
-      triptype:triptype,
-      pickuploc:pickuploc,
-      altmobile:altmobile,
-      pickupdate:pickupdate,
-      pickuptime:pickuptime,
-      status:"Pending",
-    })
-    .then(() => {
-      alert("Booking Successfull");
-    })
-    .catch((error) => {
-      alert(error.message);
-    });
-  setEmail("");
-  setMobile("");
-  setName("");
-  setComment("");
-  setTriptype("");
-  setPickuploc("Erode");
-  setAltmobile("");
-  setPickuptime("");
-  setPickupdate("");
-  }
-  else
-  {
-    alert("Session Out Please Login Again");
-  }
-
-};
-
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (props.user) {
+      //
+      db.collection("users")
+        .doc(props.user.uid)
+        .collection(props.user.email)
+        .add({
+          name: name,
+          email: email,
+          mobile: mobile,
+          comment: comment,
+          triptype: triptype,
+          pickuploc: pickuploc,
+          altmobile: altmobile,
+          pickupdate: pickupdate,
+          pickuptime: pickuptime,
+          status: "Pending",
+        })
+        .then(() => {
+          alert("Booking Successfull");
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+      setEmail("");
+      setMobile("");
+      setName("");
+      setComment("");
+      setTriptype("RoundTrip");
+      setPickuploc("Erode");
+      setAltmobile("");
+      setPickuptime("");
+      setPickupdate("");
+    } else {
+      alert("Session Out Please Login Again");
+    }
+  };
 
   return (
     <>
@@ -93,7 +78,11 @@ const handleSubmit = (e) => {
           </div>
 
           <div className="booking">
-            <form className="mb-3" controlId="formBasicEmail" onSubmit={handleSubmit}>
+            <form
+              className="mb-3"
+              controlId="formBasicEmail"
+              onSubmit={handleSubmit}
+            >
               <Row>
                 <Col md={6}>
                   <Form.Label>Email</Form.Label>
@@ -102,9 +91,9 @@ const handleSubmit = (e) => {
                     placeholder="Your Email"
                     required
                     value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
                   ></Form.Control>
                   <br />
                   <Form.Label>Mobile Number</Form.Label>
@@ -119,11 +108,14 @@ const handleSubmit = (e) => {
                   ></Form.Control>
                   <br />
                   <Form.Label>Choose Trip Type</Form.Label>
-                  <Form.Select placeholder="Triptype" required  defaultValue={triptype}
-                  onChange={(e) => {
-                    setTriptype(e.target.value);
-                  }}>
-                    <option value="1" defaultValue></option>
+                  <Form.Select
+                    placeholder="Triptype"
+                    required
+                    defaultValue={triptype}
+                    onChange={(e) => {
+                      setTriptype(e.target.value);
+                    }}
+                  >
                     <option value="RoundTrip">RoundTrip</option>
                     <option value="OneTrip">OneTrip</option>
                     <option value="Hourly Rental">Hourly Rental</option>
@@ -134,9 +126,9 @@ const handleSubmit = (e) => {
                     type="time"
                     placeholder="Your pick Time"
                     value={pickuptime}
-                  onChange={(e) => {
-                    setPickuptime(e.target.value);
-                  }}
+                    onChange={(e) => {
+                      setPickuptime(e.target.value);
+                    }}
                   ></Form.Control>
                 </Col>
                 <Col md={6}>
@@ -146,9 +138,9 @@ const handleSubmit = (e) => {
                     placeholder="Your Name"
                     required
                     value={name}
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
                   ></Form.Control>
                   <br />
                   <Form.Label>Alternate Number</Form.Label>
@@ -167,16 +159,19 @@ const handleSubmit = (e) => {
                     placeholder="Your pick Date"
                     required
                     value={pickupdate}
-                  onChange={(e) => {
-                    setPickupdate(e.target.value);
-                  }}
+                    onChange={(e) => {
+                      setPickupdate(e.target.value);
+                    }}
                   ></Form.Control>
                   <br />
                   <Form.Label>Choose PickUp Location</Form.Label>
-                  <Form.Select required defaultValue={pickuploc}
-                  onChange={(e) => {
-                    setPickuploc(e.target.value);
-                  }}>
+                  <Form.Select
+                    required
+                    defaultValue={pickuploc}
+                    onChange={(e) => {
+                      setPickuploc(e.target.value);
+                    }}
+                  >
                     <option value="Erode" selected>
                       Erode
                     </option>

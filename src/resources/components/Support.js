@@ -34,16 +34,14 @@ function Support() {
 
   return (
     <>
-      
       <main>
         <Container>
-          <h2>Support</h2>
-          <img src={support} className="imgsz" alt="..."></img>
+          <div className="supp">
+            <img src={support} width="50%" alt="..."></img>
+          </div>
           <br />
+          <br /> <h2>Support</h2>
           <br />
-          <br />
-          <h3>Send us your Query</h3>
-
           <form
             className="mb-3"
             controlId="formBasicEmail"
@@ -101,7 +99,6 @@ function Support() {
           </form>
         </Container>
       </main>
-      
     </>
   );
 }
