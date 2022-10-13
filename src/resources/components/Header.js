@@ -36,7 +36,7 @@ function Header(props)
                            )
                               
                         } 
-                            { props.user?(   <Nav.Link className='nav-link' to='/rides' onClick={()=>{navigate('/rides')}}>Your Rides</Nav.Link>
+                            { props.user?(   <Nav.Link className='nav-link' to='/yourrides' onClick={()=>{navigate('/yourrides')}}>Your Rides</Nav.Link>
                            ):( <Nav.Link className='nav-link' to='/login' onClick={()=>{navigate('/login')}}>Your rides</Nav.Link>
                            ) 
                         }  

@@ -44,7 +44,8 @@ const handleSubmit = (e) => {
   e.preventDefault();
   if(props.user)
   {
-  db.collection('users').doc(props.user.uid).collection(email)
+    // 
+  db.collection('users').doc(props.user.uid).collection(props.user.email)
     .add({
       name: name,
       email: email,
@@ -55,6 +56,7 @@ const handleSubmit = (e) => {
       altmobile:altmobile,
       pickupdate:pickupdate,
       pickuptime:pickuptime,
+      status:"Pending",
     })
     .then(() => {
       alert("Booking Successfull");

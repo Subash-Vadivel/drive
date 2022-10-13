@@ -11,7 +11,7 @@ import Footer from "./resources/components/Footer";
 import Bookings from './resources/components/Bookings';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Support from './resources/components/Support';
-
+import { YourRides } from './resources/components/YourRides';
 import fire from './fire';
 import Partner from './resources/components/Partner';
 
@@ -65,6 +65,7 @@ const [loading,setLoading]=useState(false);
       <Route  path='/login' element={<Login setUserStatus={setUserStatus} user={userstatus}/>}></Route>
       <Route exact path='/about' element={<About/>}></Route>
       <Route exact path='/support' element={<Support/>}></Route>
+      <Route exact path='/yourrides' element={<YourRides user={userstatus}/>}></Route>
       <Route  path='/bookings' element={<Bookings user={userstatus}/>}></Route>
       <Route  path='/becomemember' element={<Partner user={userstatus}/>}></Route>
     </Routes>
