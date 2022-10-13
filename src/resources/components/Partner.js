@@ -38,7 +38,7 @@ const handleSubmit = (e) => {
 
       })
       .then(() => {
-        alert("Booking Successfull");
+        alert("Applied Successfully");
       })
       .catch((error) => {
         alert(error.message);
