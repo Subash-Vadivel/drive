@@ -7,7 +7,7 @@ import { Row, Col } from "react-bootstrap";
 import "../css/Booking.css";
 import booking from "../images/booking.jpg";
 import { db } from "../../fire";
-
+import emailjs from '@emailjs/browser';
 import { useState } from "react";
 
 const Bookings = (props) => {
@@ -29,44 +29,71 @@ const Bookings = (props) => {
 
   const [pickuptime, setPickuptime] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (props.user) {
-      //
-      db.collection("users")
-        .doc(props.user.uid)
-        .collection(props.user.email)
-        .add({
-          name: name,
-          email: email,
-          mobile: mobile,
-          comment: comment,
-          triptype: triptype,
-          pickuploc: pickuploc,
-          altmobile: altmobile,
-          pickupdate: pickupdate,
-          pickuptime: pickuptime,
-          status: "Pending",
-        })
-        .then(() => {
-          alert("Booking Successfull");
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
-      setEmail("");
-      setMobile("");
-      setName("");
-      setComment("");
-      setTriptype("RoundTrip");
-      setPickuploc("Erode");
-      setAltmobile("");
-      setPickuptime("");
-      setPickupdate("");
-    } else {
-      alert("Session Out Please Login Again");
-    }
+
+
+
+
+
+
+
+
+const handleSubmit = (e) => {
+  
+  e.preventDefault();
+  if(props.user)
+  {
+    // 
+  db.collection('users').doc(props.user.uid).collection(props.user.email)
+    .add({
+      name: name,
+      email: email,
+      mobile: mobile,
+      comment:comment,
+      triptype:triptype,
+      pickuploc:pickuploc,
+      altmobile:altmobile,
+      pickupdate:pickupdate,
+      pickuptime:pickuptime,
+      status:"Pending",
+    })
+    .then(
+     
+      () => {
+        alert("Successs");
+      }
+    )
+    .catch((error) => {
+      alert(error.message);
+    });
+    const values = {
+      nameid: name,
+      reply_to:email,
+      
   };
+    
+  setEmail("");
+  setMobile("");
+  setName("");
+  setComment("");
+  setTriptype("");
+  setPickuploc("Erode");
+  setAltmobile("");
+  setPickuptime("");
+  setPickupdate("");
+
+  emailjs.send('service_2mkgwbc', 'template_djkgu5p', values, 'K8euowKjAEM6KEIrK')
+    .then((result) => {
+      console.log("email sent");
+    }, (error) => {
+        console.log("Check syntax"+error.text);
+    });
+  }
+  else
+  {
+    alert("Session Out Please Login Again");
+  }
+
+};
 
   return (
     <>
