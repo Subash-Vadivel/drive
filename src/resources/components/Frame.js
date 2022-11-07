@@ -3,7 +3,9 @@ import { Card, Button, Row, Col } from "react-bootstrap";
 import { BsClock, BsCalendarDate, BsFillPersonFill } from "react-icons/bs";
 import { GrLocation } from "react-icons/gr";
 import "../css/Frame.css";
+
 function Frame(props) {
+
   return (
     <>
       <Card>
@@ -50,7 +52,8 @@ function Frame(props) {
                 </Card.Text>
               </Col>
               <Col md={2} xs={12}>
-                <Button variant="primary">{props.status}</Button>
+                { props.status==="confirmed"?(<Button variant="success">{props.status}</Button>):(<Button variant="danger">{props.status}</Button>)}
+                
               </Col>
             </Row>
           </Card.Body>

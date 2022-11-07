@@ -1,5 +1,7 @@
 import '../css/header.css';
-import logo from '../images/newlogo5.png';
+// import logo from '../images/newlogo5.png';
+
+import logo from '../images/DriveAwayLogo.png';
 import Nav from 'react-bootstrap/Nav';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Navbar,Container } from 'react-bootstrap';

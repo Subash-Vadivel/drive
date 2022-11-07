@@ -43,7 +43,7 @@ const handleSubmit = (e) => {
   if(props.user)
   {
     // 
-  db.collection('users').doc(props.user.uid).collection(props.user.email)
+  db.collection('users').doc(props.user.uid).collection('Rides')
     .add({
       name: name,
       email: email,
@@ -67,9 +67,10 @@ const handleSubmit = (e) => {
     });
     const values = {
       nameid: name,
-      reply_to:email,
+      reply:email,
       
   };
+  
     
   setEmail("");
   setMobile("");

@@ -1,6 +1,8 @@
 import '../css/Footer.css';
 import { Row,Col,Container } from 'react-bootstrap';
-import logofoot from '../images/newlogo2.png';
+// import logofoot from '../images/newlogo2.png';
+
+import logofoot from '../images/DriveAwayLogo.png';
 import { SocialIcon } from 'react-social-icons';
 import {useNavigate} from 'react-router-dom';
 function Footer()

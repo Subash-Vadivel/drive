@@ -21,8 +21,7 @@ export const YourRides = (props) => {
     // doc(props.user.uid).collection(props.user.email).
     setFlag(0);
     db.collection("users")
-      .doc(props.user.uid)
-      .collection(props.user.email)
+      .doc(props.user.uid).collection('Rides')
       .get()
       .then((querySnapshot) => {
         // Loop through the data and store
@@ -34,6 +33,7 @@ export const YourRides = (props) => {
         });
       });
   };
+  
   return (
     <>
       <main>

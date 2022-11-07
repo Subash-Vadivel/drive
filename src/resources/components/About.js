@@ -25,7 +25,7 @@ function About()
             <Container>
                 {/* <h3>Rido</h3><br></br> */}
                 <br></br>
-                <p id="abt">RIDO offers customers the comfortable and easiest option for travelling by a road.Our website saves customers time by searching taxis at very short notice of time period by fetching the best results from the vendors to book an outstation taxi.Our company providing safe and enjoyable service in fare and lowest pricewhich should be reasonable to our customers. This website is very simple to access for everyone, it is really very comfortable and catchy.</p>
+                <p id="abt">Drive Away offers customers the comfortable and easiest option for travelling by a road.Our website saves customers time by searching taxis at very short notice of time period by fetching the best results from the vendors to book an outstation taxi.Our company providing safe and enjoyable service in fare and lowest pricewhich should be reasonable to our customers. This website is very simple to access for everyone, it is really very comfortable and catchy.</p>
                 <br></br>
             </Container>
         </Row>
@@ -38,7 +38,7 @@ function About()
             <Col md={1}></Col>
             <Col md = {4}>
                 <h3>QUALITY SERVICES</h3><br></br>
-                <p id="abt1">RIDO offers highly effective and quality services to our customers. Like good quality running cab with highly trustworthy, honest drivers. We do care for customer satisfaction. We provide 24x7 customer care support to our customers from the beginning to the end of their journey.</p>
+                <p id="abt1">Drive Away offers highly effective and quality services to our customers. Like good quality running cab with highly trustworthy, honest drivers. We do care for customer satisfaction. We provide 24x7 customer care support to our customers from the beginning to the end of their journey.</p>
                 <br></br>
             </Col>
             <Col md={1}></Col>
