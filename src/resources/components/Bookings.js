@@ -28,15 +28,6 @@ const Bookings = (props) => {
   const [pickupdate, setPickupdate] = useState("");
 
   const [pickuptime, setPickuptime] = useState("");
-
-
-
-
-
-
-
-
-
 const handleSubmit = (e) => {
   
   e.preventDefault();
