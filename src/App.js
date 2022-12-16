@@ -14,7 +14,7 @@ import Support from './resources/components/Support';
 import { YourRides } from './resources/components/YourRides';
 import fire from './fire';
 import Partner from './resources/components/Partner';
-
+import Hire from './resources/components/Hire';
 import ClimbingBoxLoader from "react-spinners/HashLoader";
 function App(){
    
@@ -67,6 +67,8 @@ const [loading,setLoading]=useState(false);
       <Route exact path='/support' element={<Support/>}></Route>
       <Route exact path='/yourrides' element={<YourRides user={userstatus}/>}></Route>
       <Route  path='/bookings' element={<Bookings user={userstatus}/>}></Route>
+      <Route  path='/hire' element={<Hire user={userstatus}/>}></Route>
+
       <Route  path='/becomemember' element={<Partner user={userstatus}/>}></Route>
     </Routes>
     

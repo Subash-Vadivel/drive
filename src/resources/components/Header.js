@@ -3,7 +3,7 @@ import '../css/header.css';
 
 import logo from '../images/DriveAwayLogo.png';
 import Nav from 'react-bootstrap/Nav';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Navbar,Container } from 'react-bootstrap';
 
 import {useNavigate} from 'react-router-dom';
@@ -28,16 +28,18 @@ function Header(props)
                         <Nav className='ms-auto'>
                               <Nav.Link className='nav-link' to='/' onClick={()=>{navigate('/')}}>Home</Nav.Link>
 
-                              {/* <NavDropdown  title="Services"  id="navbarScrollingDropdown">
-                                    <NavDropdown.Item className='nav-drop-down'>Booking</NavDropdown.Item>
-                                    <NavDropdown.Item className='nav-drop-down' >Hire Drivers</NavDropdown.Item>
-                                    <NavDropdown.Item className='nav-drop-down'>Road Side Assistance</NavDropdown.Item>
-                              </NavDropdown> */}
-                              {  props.user?(   <Nav.Link className='nav-link' to='/bookings' onClick={()=>{navigate('/bookings')}}>Booking</Nav.Link>
-                           ):( <Nav.Link className='nav-link' to='/login' onClick={()=>{navigate('/login')}}>Booking</Nav.Link>
-                           )
-                              
-                        } 
+                              <NavDropdown  title="Services"  id="navbarScrollingDropdown">
+                              {  props.user?(   <NavDropdown.Item className='nav-link' to='/bookings' onClick={()=>{navigate('/bookings')}}>Cab Booking</NavDropdown.Item>
+                           ):( <NavDropdown.Item className='nav-link' to='/login' onClick={()=>{navigate('/login')}}>Cab Booking</NavDropdown.Item>
+                           )          
+                              } 
+                              {  props.user?(   <NavDropdown.Item className='nav-link' to='/hire' onClick={()=>{navigate('/hire')}}>Driver Booking</NavDropdown.Item>
+                           ):( <NavDropdown.Item className='nav-link' to='/login' onClick={()=>{navigate('/login')}}>Driver Booking</NavDropdown.Item>
+                           )          
+                              } 
+                                    {/* <NavDropdown.Item className='nav-drop-down'>Road Side Assistance</NavDropdown.Item> */}
+                              </NavDropdown>
+                          
                             { props.user?(   <Nav.Link className='nav-link' to='/yourrides' onClick={()=>{navigate('/yourrides')}}>Your Rides</Nav.Link>
                            ):( <Nav.Link className='nav-link' to='/login' onClick={()=>{navigate('/login')}}>Your rides</Nav.Link>
                            ) 
